@@ -1,5 +1,3 @@
-import os
-
 from NW_Part1 import Alignment
 
 """
@@ -16,27 +14,8 @@ array of score relating to each sequence found within one of the files in ./sequ
 """
 
 # Here is a sample output of working with the NW algorithm from Part1
-# x = "GSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKL"
-# y = "NNPELQAHAGKVFKLVYEAAIQLQVTGVVVTDATLKNLGSVHVSKG"
-# Read sequences from file
-# Get the absolute path of the current script
-script_path = os.path.abspath(__file__)
-
-# Get the directory containing the script
-script_dir = os.path.dirname(script_path)
-
-# Construct the path to the sequences file
-sequences_file = os.path.join(script_dir, 'sequences', 'multiple32.txt')
-
-# Read sequences from file
-with open(sequences_file, 'r') as file:
-    sequences = file.readlines()
-# with open('./sequences/multiple2.txt', 'r') as file:
-#     sequences = file.readlines()
-
-# Extract sequences X and Y
-x = sequences[1].strip()
-y = sequences[2].strip()
+x = "GSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKL"
+y = "NNPELQAHAGKVFKLVYEAAIQLQVTGVVVTDATLKNLGSVHVSKG"
 
 # Here we are calling the alignment method
 a = Alignment(x, y) # instantiates the alignment object, providing sequences X and Y
