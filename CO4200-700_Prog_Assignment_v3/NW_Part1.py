@@ -1,4 +1,5 @@
 import sys
+
 import blosum as bl
 
 """
@@ -166,7 +167,10 @@ class Alignment(object):
                 j -= 1
         self.xa = xb
         self.ya = yb
-
+#### hope we are allowed to edit this 
+    def get_aligned_sequences(self):
+        self.check_alignment()
+        return ''.join(self.xa), ''.join(self.ya)
 
 if __name__=='__main__':
     print('This is the Needleman-Wunsch algorithm for pairwise alignment \n'

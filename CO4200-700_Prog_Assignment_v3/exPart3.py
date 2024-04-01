@@ -1,5 +1,4 @@
 import numpy as np
-from multiple_sequence_alignment import MultipleAlignment
 from NW_Part1 import Alignment
 
 
@@ -26,18 +25,5 @@ def compute_alignments(file_path):
     print(f"Total Comparisons: {num_sequences ** 2}")
     print(scores_matrix)
 
-
-# Here is a sample output of working with the NW algorithm from Part1
-x = "GSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKL"
-y = "NNPELQAHAGKVFKLVYEAAIQLQVTGVVVTDATLKNLGSVHVSKG"
-
-# Here we are calling the alignment method
-a = Alignment(x, y) # instantiates the alignment object, providing sequences X and Y
-a.compute_alignment() # run to do the actual computation
-print("Computed alignment:")
-a.display_alignment() # this can be displayed to help visualise what is going on
-
-# a.score_alignment provides a float score for X and Y alignment
-print("Score of alignment: " + str(a.score_alignment()))
-
-compute_alignments('CO4200-700_Prog_Assignment_v3\sequences\multiple3.txt')
+# Example usage
+compute_alignments('CO4200-700_Prog_Assignment_v3\sequences\multiple128.txt')
