@@ -55,17 +55,17 @@ def compute_alignments(file_path):
 
 
 # Modify this path as necessary for your environment.
-D = compute_alignments('CO4200-700_Prog_Assignment_v3\sequences\multiple10.txt')
+# D = compute_alignments('CO4200-700_Prog_Assignment_v3\sequences\multiple10.txt')
 
-model = AgglomerativeClustering(linkage='average', metric='precomputed', distance_threshold = None)
-#cluster the objects based on the distances
-cluster = model.fit(D)
-n_objects = len(cluster.labels_) # this is just the number of sequences
-# cluster.children_ gives the hierarchical clustering
-# leaves are the original objects and labelled from 0 to 4 here
-# the internal nodes in the cluster are labelled from 5 onwards
-next_node = n_objects 
-for i, merge in enumerate(cluster.children_):
-    print("Align ", merge[0], " with ", merge[1], " to give ", next_node)
-    next_node+=1
-print("done")
+# model = AgglomerativeClustering(linkage='average', metric='precomputed', distance_threshold = None)
+# #cluster the objects based on the distances
+# cluster = model.fit(D)
+# n_objects = len(cluster.labels_) # this is just the number of sequences
+# # cluster.children_ gives the hierarchical clustering
+# # leaves are the original objects and labelled from 0 to 4 here
+# # the internal nodes in the cluster are labelled from 5 onwards
+# next_node = n_objects 
+# for i, merge in enumerate(cluster.children_):
+#     print("Align ", merge[0], " with ", merge[1], " to give ", next_node)
+#     next_node+=1
+# print("done")

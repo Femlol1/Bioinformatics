@@ -35,6 +35,8 @@ def build_guide_tree(clustering, n_leaves):
 
 def main():
     file_path = 'CO4200-700_Prog_Assignment_v3/sequences/multiple10.txt'
+    
+    num_sequences = open(file_path, 'r').readlines()[0]
     sequences = [line.strip() for line in open(file_path, 'r').readlines()[1:]]  # Skip the first line
 
     D = compute_alignments(file_path)
@@ -45,7 +47,8 @@ def main():
 
     alignment_instance = MultipleAlignment()
     multiple_alignment = compute_progressive_alignment(sequences, guide_tree, alignment_instance)
-    
+    print(f"Reading input sequences from file {file_path}")
+    print(f"Number of sequences {num_sequences}")
     print("Computed alignment:")
     alignment_instance.displayAlignment(multiple_alignment)
     print("Score of alignment: " + str(alignment_instance.scoreMultipleAlignment(multiple_alignment)))
