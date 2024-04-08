@@ -20,8 +20,6 @@ def compute_alignments(file_path):
         print("Error: Number of sequences does not match the expected count.")
         return
     
-    # Print the number of sequences and the file path
-    # print(f"Computing Alignment for {num_sequences} Sequences in {file_path}...")
     # Initialize a matrix to store the scores
     scores_matrix = np.zeros((num_sequences, num_sequences))
 
@@ -35,17 +33,15 @@ def compute_alignments(file_path):
             scores_matrix[i, j] = alignment.score_alignment()
 
     # Returns the total number of comparisons and the scores matrix
-    
-    
     total_comparisons = num_sequences ** 2
 
     return total_comparisons, scores_matrix,num_sequences,file_path
     
 
 # Call the function with the path to the file
-total_comparisons, scores_matrix,num_sequences,file_path = compute_alignments('CO4200-700_Prog_Assignment_v3\\sequences\\multiple32.txt')
-# I just wanted to get the exact same result as shown in sample output part2 is at least close enough
+total_comparisons, scores_matrix,num_sequences,file_path = compute_alignments('CO4200-700_Prog_Assignment_v3\\sequences\\multiple128.txt')
 
+# I just wanted to get the exact same result as shown in sample output part2 is at least close enough
 relative_path = file_path.split("CO4200-700_Prog_Assignment_v3\\", 1)[1]
 
 print(f"Computing Alignment for {num_sequences} Sequences in {relative_path}...")

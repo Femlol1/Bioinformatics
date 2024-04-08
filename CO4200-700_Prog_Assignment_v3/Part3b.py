@@ -24,7 +24,7 @@ def find_initial_pair(D):
     return pair
 
 def main():
-    file_path = 'CO4200-700_Prog_Assignment_v3/sequences/multiple10.txt'
+    file_path = 'CO4200-700_Prog_Assignment_v3/sequences/multiple128.txt'
     sequences = [line.strip() for line in open(file_path, 'r').readlines()[1:]]
 
     D = compute_alignments(file_path)
